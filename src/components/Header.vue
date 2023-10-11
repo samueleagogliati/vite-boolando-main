@@ -22,7 +22,7 @@ export default{
      <div class="container">
       <!-- MENU -->
       <nav class="menu-person">
-          <ul>
+          <ul class="m-0 p-0">
             <li v-for="(item, index) in menuPersone" :key="index">
               <a :href="item.href">{{ item.text }}</a>
             </li>
@@ -30,12 +30,12 @@ export default{
         </nav>
         <!-- LOGO BOOLEAN -->
         <div class="logo-bar">
-          <img src="../assets/img/boolean-logo.png" alt="boolando-logo">
+          <img src="zalando-Logo.png" alt="zalando-logo">
         </div>
         <!-- MENU ICON -->
-        <div id="menu-icon-bar">
+        <div id="menu-icon-bar h-100">
           <nav>
-            <ul>
+            <ul class="m-0">
               <li v-for="(item, index) in menuIcons" :key="index">
               <a :href="item.href"><i :class="item.icon"></i></a></li>
             </ul>
@@ -64,7 +64,8 @@ header{
   .container{
     justify-content: space-between;
     align-items: center;
-
+    width: 75%;
+    height: 100%;
     nav{
       ul{
         align-items: center;

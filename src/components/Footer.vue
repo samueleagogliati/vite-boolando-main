@@ -21,7 +21,7 @@ export default{
         <div>
           <p>Boolando S.r.l</p>
          <nav>
-          <ul>
+          <ul class="m-0 p-0">
             <li v-for="(item, index) in menuOptions" :key="index">
               <a :href="item.href">{{ item.text }}</a>
             </li>
@@ -32,7 +32,7 @@ export default{
         <div class="social-footer">
           <p>Trovaci anche su</p>
           <nav>
-            <ul>
+            <ul class="m-0 p-0">
               <li v-for="(item, index) in menuFooterIcons" :key="index">
                 <a :href="item.href"><i :class="item.icon"></i></a>
               </li>
@@ -59,13 +59,14 @@ export default{
 
   .container{
     justify-content: space-between;
-    padding-top: 30px;
-
+    align-items: center;
+    width: 75%;
     p{
       top: 5px;
       font-size: 15px;
       font-weight: bold;
       color: white;
+      margin: 0;
     }
     
     ul{
