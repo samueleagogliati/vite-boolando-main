@@ -1,7 +1,7 @@
 <script >
 
 import menuMain from '../data/menuMain';
-import Cards from './Cards.vue';
+import Cards from './partials/Cards.vue';
 
 
 export default{
@@ -30,7 +30,7 @@ export default{
  <main>
   <div class="container">
     <div class="row d-flex justify-content-center">
-      <Cards></Cards> 
+      <Cards v-for="(item, index) in menuMain" :key="index" :cardObject="item"></Cards> 
     </div>
   </div>
  </main>

@@ -1,15 +1,12 @@
 <script scoped>
-    import menuMain from '../data/menuMain';
     export default {
         name:'Main',
-        data(){
-            return{
-            menuMain
-            }   
+        props:{
+          cardObject: Object
         },
         methods:{
             getImagePath(img){
-            return new URL(`../assets/img/${img}`, import.meta.url).href;
+            return new URL(`../../assets/img/${img}`, import.meta.url).href;
             }
         }
     }
@@ -17,21 +14,21 @@
 
 <template>
 
-    <div class="card col-4 m-0 p-0 mt-3" v-for="(item, index) in menuMain" :key="index">
-        <img class="" :src="getImagePath(item.primaryImage)">
-        <span class="saldi span-rosso-verde" v-if="item.discount">{{ item.discount }}</span>
-        <span class="sostenibilità span-rosso-verde" v-if="item.sostenibilita">{{item.sostenibilita}}</span>
+    <div class="card col-4 m-0 p-0 mt-3">
+        <img class="" :src="getImagePath(cardObject.primaryImage)">
+        <span class="saldi span-rosso-verde" v-if="cardObject.discount">{{ cardObject.discount }}</span>
+        <span class="sostenibilità span-rosso-verde" v-if="cardObject.sostenibilita">{{cardObject.sostenibilita}}</span>
         <div class="product-2">
-            <img :src="getImagePath(item.secondaryImage)">
+            <img :src="getImagePath(cardObject.secondaryImage)">
         </div>
         <div class="heart"><i class="fa-solid fa-heart"></i>
         </div>
     
         <div class="card-body m-0 p-0 ps-2">
-            <p class="m-0 p-0">{{ item.marca }}</p>
-            <h6 class="m-0 p-0">{{ item.modello }}</h6>
-            <span class="prezzo-saldi">{{ item.lastPrice }} &euro;</span>
-            <span class="prezzo" v-if="item.fullPrice"> {{ item.fullPrice }} &euro;</span>
+            <p class="m-0 p-0">{{ cardObject.marca }}</p>
+            <h6 class="m-0 p-0">{{ cardObject.modello }}</h6>
+            <span class="prezzo-saldi">{{ cardObject.lastPrice }} &euro;</span>
+            <span class="prezzo" v-if="cardObject.fullPrice"> {{ cardObject.fullPrice }} &euro;</span>
         </div>
     </div>
 
@@ -41,7 +38,7 @@
 
 
 <style lang="scss" scoped>
-@use '../sass/partials/variabiles' as * ;
+@use '../../sass/partials/variabiles' as * ;
 
 
 .card{
